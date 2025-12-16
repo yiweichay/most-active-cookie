@@ -27,6 +27,12 @@ public class FileParserServiceTest {
     }
 
     @Test
+    void shouldThrowInvalidArgumentsExceptionWhenArgumentsAreMissing() {
+        givenArguments(new String[]{"-f", "cookie.csv"});
+        thenParseArgsThrowsInvalidArgumentsException();
+    }
+
+    @Test
     void shouldReadCookiesFromFile() throws Exception {
         givenFile("cookies.csv");
         whenReadCookiesIsCalled();
@@ -62,5 +68,9 @@ public class FileParserServiceTest {
         assertEquals("2018-12-09T14:19:00+00:00", cookieTimeStampPair.get(0).getValue());
         assertEquals("SAZuXPGUrfbcn5UA", cookieTimeStampPair.get(1).getKey());
         assertEquals("2018-12-09T10:13:00+00:00", cookieTimeStampPair.get(1).getValue());
+    }
+
+    private void thenParseArgsThrowsInvalidArgumentsException() {
+        Assertions.assertThrows(Exception.class, () -> fileParserService.parseArgs(args));
     }
 }
