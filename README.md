@@ -19,7 +19,7 @@ java -cp out org.quantcast.Main -f <FILENAME> -d <DATE>
 ```
 An example command is:
 ```bash
-java -cp out org.quantcast.Main -f cookie_log.csv -d 2018-12-09
+java -cp out org.quantcast.Main -f cookies.csv -d 2018-12-09
 ```
 
 ## Implementation

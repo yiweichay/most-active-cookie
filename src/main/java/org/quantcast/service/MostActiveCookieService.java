@@ -5,7 +5,7 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class MostActiveCookieService {
 
-    public static Set<String> findMostActiveCookies(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    public Set<String> findMostActiveCookies(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
 
         final String dayStart = UTCDate + "T23:59:59+00:00";
         final String dayEnd   = UTCDate + "T00:00:00+00:00";
@@ -30,7 +30,7 @@ public class MostActiveCookieService {
         return mostActiveCookies;
     }
 
-    private static int lowerBound(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    private int lowerBound(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
         int left = 0;
         int right = tuples.size();
 
@@ -47,7 +47,7 @@ public class MostActiveCookieService {
         return left;
     }
 
-    private static int upperBound(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    private int upperBound(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
         int left = 0;
         int right = tuples.size();
 
