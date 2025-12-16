@@ -7,9 +7,9 @@ This service identifies the most active cookie(s) from a csv for a specified dat
 - Maven 3.6 or higher
 
 ## Building the Project
-To build the project from the CLI, run:
+To build the project, run:
 ```bash
-javac -d out src/main/java/org/quantcast/service/MostActiveCookieService.java src/main/java/org/quantcast/Main.java
+mvn clean install
 ```
 
 ## Running the Service
@@ -44,3 +44,9 @@ Algorithms used:
 - Counting cookies: O(k), where k is the number of entries on the specified date
 - Finding max occurrences: O(m), where m is the number of unique cookies on the specified date
 - Total Time complexity: O(n + log n + k + m) = O(n)
+
+## Tests
+The project includes unit tests for the main functionalities. To run the tests, use:
+```bash
+mvn test
+```
