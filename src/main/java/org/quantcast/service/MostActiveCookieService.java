@@ -37,13 +37,13 @@ public class MostActiveCookieService {
         return mostActiveCookies;
     }
 
-    private int findStartIndex(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    public int findStartIndex(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
         int left = 0;
         int right = tuples.size();
 
         while (left < right) {
             final int mid = (left + right) / 2;
-            final String midDate = tuples.get(mid).getValue();
+            final String midDate = extractDate(tuples.get(mid).getValue());
 
             if (midDate.compareTo(UTCDate) > 0) {
                 left = mid + 1;
@@ -54,13 +54,13 @@ public class MostActiveCookieService {
         return left;
     }
 
-    private int findEndIndex(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    public int findEndIndex(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
         int left = 0;
         int right = tuples.size();
 
         while (left < right) {
             final int mid = (left + right) / 2;
-            final String midDate = tuples.get(mid).getValue();
+            final String midDate = extractDate(tuples.get(mid).getValue());
 
             if (midDate.compareTo(UTCDate) >= 0) {
                 left = mid + 1;
@@ -69,5 +69,9 @@ public class MostActiveCookieService {
             }
         }
         return left;
+    }
+
+    private String extractDate(final String timestamp) {
+        return timestamp.substring(0,10);
     }
 }

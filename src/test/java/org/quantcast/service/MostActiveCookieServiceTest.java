@@ -26,10 +26,10 @@ public class MostActiveCookieServiceTest {
     @Test
     void shouldFindSingleMostActiveCookie() {
         givenSetUp(Arrays.asList(
-            new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T23:50:00+00:00"),
-            new SimpleEntry<>("SAZuXPGUrfbcn5UA", "2018-12-12T22:45:00+00:00"),
-            new SimpleEntry<>("5UAVanZf6UtGyKVS", "2018-12-12T21:30:00+00:00"),
-            new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T20:15:00+00:00")
+                new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T23:50:00+00:00"),
+                new SimpleEntry<>("SAZuXPGUrfbcn5UA", "2018-12-12T22:45:00+00:00"),
+                new SimpleEntry<>("5UAVanZf6UtGyKVS", "2018-12-12T21:30:00+00:00"),
+                new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T20:15:00+00:00")
         ));
         whenFindMostActiveCookiesIsRan();
         thenSingleMostActiveCookieIsReturned();
@@ -38,14 +38,40 @@ public class MostActiveCookieServiceTest {
     @Test
     void shouldFindTwoMostActiveCookies() {
         givenSetUp(Arrays.asList(
-            new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T23:50:00+00:00"),
-            new SimpleEntry<>("SAZuXPGUrfbcn5UA", "2018-12-12T23:50:00+00:00"),
-            new SimpleEntry<>("5UAVanZf6UtGyKVS", "2018-12-12T21:30:00+00:00"),
-            new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T20:15:00+00:00"),
-            new SimpleEntry<>("SAZuXPGUrfbcn5UA", "2018-12-12T20:15:00+00:00")
+                new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T23:50:00+00:00"),
+                new SimpleEntry<>("SAZuXPGUrfbcn5UA", "2018-12-12T23:50:00+00:00"),
+                new SimpleEntry<>("5UAVanZf6UtGyKVS", "2018-12-12T21:30:00+00:00"),
+                new SimpleEntry<>("AtY0laUfhglK3lC7", "2018-12-12T20:15:00+00:00"),
+                new SimpleEntry<>("SAZuXPGUrfbcn5UA", "2018-12-12T20:15:00+00:00")
         ));
         whenFindMostActiveCookiesIsRan();
         thenTwoMostActiveCookiesAreReturned();
+    }
+
+    @Test
+    void shouldFindStartIndexCorrectly() {
+        givenSetUp(Arrays.asList(
+                new SimpleEntry<>("cookie1", "2018-12-14T10:00:00+00:00"),
+                new SimpleEntry<>("cookie2", "2018-12-13T10:00:00+00:00"),
+                new SimpleEntry<>("cookie3", "2018-12-12T12:00:00+00:00"),
+                new SimpleEntry<>("cookie3", "2018-12-12T10:00:00+00:00"),
+                new SimpleEntry<>("cookie4", "2018-12-11T10:00:00+00:00")
+        ));
+        int startIndex = mostActiveCookieService.findStartIndex(cookieTimestampPair, "2018-12-12");
+        assertEquals(2, startIndex);
+    }
+
+    @Test
+    void shouldFindEndIndexCorrectly() {
+        givenSetUp(Arrays.asList(
+                new SimpleEntry<>("cookie1", "2018-12-13T10:00:00+00:00"),
+                new SimpleEntry<>("cookie2", "2018-12-12T12:00:00+00:00"),
+                new SimpleEntry<>("cookie3", "2018-12-12T11:00:00+00:00"),
+                new SimpleEntry<>("cookie3", "2018-12-12T10:00:00+00:00"),
+                new SimpleEntry<>("cookie4", "2018-12-11T10:00:00+00:00")
+        ));
+        int endIndex = mostActiveCookieService.findEndIndex(cookieTimestampPair, "2018-12-12");
+        assertEquals(4, endIndex);
     }
 
     private void givenSetUp(List<SimpleEntry<String, String>> cookies) {
