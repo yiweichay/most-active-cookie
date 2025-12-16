@@ -1,17 +1,23 @@
 package org.quantcast.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 
 public class MostActiveCookieService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MostActiveCookieService.class);
+
     public Set<String> findMostActiveCookies(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+        LOGGER.info("Finding most active cookies for date: {}", UTCDate);
 
-        final String dayStart = UTCDate + "T23:59:59+00:00";
-        final String dayEnd   = UTCDate + "T00:00:00+00:00";
+        final int startIndex = findStartIndex(tuples, UTCDate);
+        final int endIndex = findEndIndex(tuples, UTCDate);
 
-        final int startIndex = lowerBound(tuples, dayStart);
-        final int endIndex = upperBound(tuples, dayEnd);
+        LOGGER.debug("Processing indices from {} to {}", startIndex, endIndex);
+
         Map<String, Integer> cookieMap = new HashMap<>();
         Set<String> mostActiveCookies = new HashSet<>();
         int maxCount = 0;
@@ -27,10 +33,11 @@ public class MostActiveCookieService {
                 maxCount = cookieMap.get(cookie);
             }
         }
+        LOGGER.info("Most active cookies: {} with count {}", mostActiveCookies, maxCount);
         return mostActiveCookies;
     }
 
-    private int lowerBound(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    private int findStartIndex(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
         int left = 0;
         int right = tuples.size();
 
@@ -47,7 +54,7 @@ public class MostActiveCookieService {
         return left;
     }
 
-    private int upperBound(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
+    private int findEndIndex(final List<SimpleEntry<String, String>> tuples, final String UTCDate) {
         int left = 0;
         int right = tuples.size();
 

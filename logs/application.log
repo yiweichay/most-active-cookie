@@ -1,0 +1,43 @@
+2025-12-16 22:34:57 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookie.csv]
+2025-12-16 22:34:57 [main] ERROR o.q.service.FileParserService - Invalid arguments. file: cookie.csv, date: null
+2025-12-16 22:34:57 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookie.csv, -d, 2025-12-16]
+2025-12-16 22:34:57 [main] INFO  o.q.service.FileParserService - Reading cookies from file: C:\Users\cyiwe\Desktop\Quantcast Test\most-active-cookie\target\test-classes\cookies.csv
+2025-12-16 22:34:57 [main] INFO  o.q.service.FileParserService - Total cookies read: 8
+2025-12-16 22:34:57 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-12
+2025-12-16 22:34:57 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7, SAZuXPGUrfbcn5UA] with count 2
+2025-12-16 22:34:57 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-12
+2025-12-16 22:34:57 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7] with count 2
+2025-12-16 23:12:41 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookie.csv]
+2025-12-16 23:12:41 [main] ERROR o.q.service.FileParserService - Invalid arguments. file: cookie.csv, date: null
+2025-12-16 23:12:41 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookie.csv, -d, 2025-12-16]
+2025-12-16 23:12:41 [main] INFO  o.q.service.FileParserService - Reading cookies from file: C:\Users\cyiwe\Desktop\Quantcast Test\most-active-cookie\target\test-classes\cookies.csv
+2025-12-16 23:12:41 [main] INFO  o.q.service.FileParserService - Total cookies read: 8
+2025-12-16 23:12:41 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-12
+2025-12-16 23:12:41 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7, SAZuXPGUrfbcn5UA] with count 2
+2025-12-16 23:12:41 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-12
+2025-12-16 23:12:41 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7] with count 2
+2025-12-16 23:19:23 [main] INFO  org.quantcast.Main - Application started with arguments: [-f, cookies.csv, -d, 2018-12-09]
+2025-12-16 23:19:23 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookies.csv, -d, 2018-12-09]
+2025-12-16 23:19:23 [main] INFO  o.q.service.FileParserService - Reading cookies from file: cookies.csv
+2025-12-16 23:19:23 [main] INFO  o.q.service.FileParserService - Total cookies read: 64
+2025-12-16 23:19:23 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-09
+2025-12-16 23:19:23 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7, SAZuXPGUrfbcn5UA, 5UAVanZf6UtGyKVS] with count 2
+2025-12-16 23:19:23 [main] INFO  org.quantcast.Main - Printing results:
+2025-12-16 23:19:23 [main] INFO  org.quantcast.Main - Application finished successfully
+2025-12-16 23:25:39 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookie.csv]
+2025-12-16 23:25:39 [main] ERROR o.q.service.FileParserService - Invalid arguments. file: cookie.csv, date: null
+2025-12-16 23:25:39 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookie.csv, -d, 2025-12-16]
+2025-12-16 23:25:39 [main] INFO  o.q.service.FileParserService - Reading cookies from file: C:\Users\cyiwe\Desktop\Quantcast Test\most-active-cookie\target\test-classes\cookies.csv
+2025-12-16 23:25:39 [main] INFO  o.q.service.FileParserService - Total cookies read: 8
+2025-12-16 23:25:39 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-12
+2025-12-16 23:25:39 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7, SAZuXPGUrfbcn5UA] with count 2
+2025-12-16 23:25:39 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-12
+2025-12-16 23:25:39 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7] with count 2
+2025-12-16 23:30:06 [main] INFO  org.quantcast.Main - Application started with arguments: [-f, cookies.csv, -d, 2018-12-09]
+2025-12-16 23:30:06 [main] INFO  o.q.service.FileParserService - Parsing arguments: [-f, cookies.csv, -d, 2018-12-09]
+2025-12-16 23:30:06 [main] INFO  o.q.service.FileParserService - Reading cookies from file: cookies.csv
+2025-12-16 23:30:06 [main] INFO  o.q.service.FileParserService - Total cookies read: 64
+2025-12-16 23:30:06 [main] INFO  o.q.service.MostActiveCookieService - Finding most active cookies for date: 2018-12-09
+2025-12-16 23:30:06 [main] INFO  o.q.service.MostActiveCookieService - Most active cookies: [AtY0laUfhglK3lC7, SAZuXPGUrfbcn5UA, 5UAVanZf6UtGyKVS] with count 2
+2025-12-16 23:30:06 [main] INFO  org.quantcast.Main - Printing results:
+2025-12-16 23:30:06 [main] INFO  org.quantcast.Main - Application finished successfully

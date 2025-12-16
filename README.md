@@ -13,13 +13,13 @@ mvn clean install
 ```
 
 ## Running the Service
-To run the service, use the following command:
+To run the service, copy dependencies:
 ```bash
-java -cp out org.quantcast.Main -f <FILENAME> -d <DATE>
+mvn dependency:copy-dependencies
 ```
-An example command is:
+Run the service with:
 ```bash
-java -cp out org.quantcast.Main -f cookies.csv -d 2018-12-09
+java -cp "target/classes;target/dependency/*" org.quantcast.Main -f cookies.csv -d 2018-12-09
 ```
 
 ## Implementation
